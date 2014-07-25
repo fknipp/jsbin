@@ -2,7 +2,7 @@
 <html id="jsbin" lang="en" class="{{#if flash_tip}}showtip{{/if}}{{#if embed}} embed{{/if}}">
 <head>
   <meta charset=utf-8>
-  <title>JS Bin - Collaborative JavaScript Debugging</title>
+  <title>{{#if customconfig.name}}{{customconfig.name}}{{else}}JS Bin - Collaborative JavaScript Debugging{{/if}}</title>
   <link rel="icon" href="{{static}}/images/favicon.png">
   <link rel="stylesheet" href="{{static}}/css/style.css{{cacheBust}}">
   <link rel="stylesheet" href="{{static}}/css/flat-ui.css{{cacheBust}}">
@@ -13,14 +13,14 @@
   {{/if}}
   {{#if bin}}
   <meta property="og:url" content="{{root}}{{code_id_path}}/edit" />
-  <meta property="og:title" content="JS Bin" />
+  <meta property="og:title" content="{{#if customconfig.name}}{{customconfig.name}}{{else}}JS Bin{{/if}}" />
   <meta property="og:description" content="Sample of the bin: {{bin.metadata.summary}}" />
   {{else}}
   <meta property="og:url" content="{{root}}" />
-  <meta property="og:title" content="JS Bin" />
+  <meta property="og:title" content="{{#if customconfig.name}}{{customconfig.name}}{{else}}JS Bin{{/if}}" />
   <meta property="og:description" content="A live pastebin for HTML, CSS & JavaScript and a range of processors, including SCSS, CoffeeScript, Jade and more..." />
   {{/if}}
-  <meta property="og:image" content="{{static}}/images/logo.png" />
+  <meta property="og:image" content="{{static}}{{#if customconfig.logo}}/{{customconfig.logo}}{{else}}/images/logo.png{{/if}}" />
 </head>
 <!--[if lt IE 7]>  <body class="source ie ie6"> <![endif]-->
 <!--[if IE 7]>     <body class="source ie ie7"> <![endif]-->
