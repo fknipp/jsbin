@@ -33,9 +33,13 @@ if(top != self) {
   document.write('<' + '!--');
 }
 </script>
-{{#feature request "welcomePanel"}}
-  {{> welcome_panel}}
-{{/feature}}
+{{#if customconfig.welcomePanel}}
+  {{{customconfig.welcomePanel}}}
+{{else}}
+  {{#feature request "welcomePanel"}}
+    {{> welcome_panel}}
+  {{/feature}}
+{{/if}}
 {{/unless}}
 <div id="control">
   <div class="control">
